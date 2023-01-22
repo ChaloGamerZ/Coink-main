@@ -1,0 +1,53 @@
+
+<div class="contenedor grid-container">
+    <div id="info" class="grid-item">
+        <div id="contenido">
+            <div id="bienvenido" class="texto-coink">
+                ¡Bienvenido a la herramienta de registro Coink!
+            </div>
+            <img id="coink1" src = "./assets/coink1.png"/>
+            <div id="texto-dia" class = "texto-coink">Coink para tu día a día.
+                Empieza ahorrando y cumple tus sueños con propósito.
+            </div>
+            <img src = "./assets/coink2.png"/>
+        </div>
+    </div>
+    <div id="form-cont" class="grid-item">
+        <div id="registro">
+            <span id="texto-pregunta">¿Aún no tienes cuenta?</span>
+            <span id="texto-registro">Regístrate ahora</span>
+        </div>
+
+        <div id="formulario">
+            <div class="text-start">
+                <span id="texto-iniciar-sesion">Iniciar sesión en Coink</span>
+            </div>
+            <form>
+                <mat-form-field class="form-items" appearance="outline">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input type="email" matInput>
+                    <mat-icon matSuffix>person_outline</mat-icon>
+
+                </mat-form-field>
+                <mat-form-field  class="form-items" appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <section id="section-check">
+                <mat-checkbox color="primary"><span id="checkbox-re">Recordarme</span></mat-checkbox>
+                </section>
+                <button id="btn-login" routerLink="" mat-raised-button color="primary">Iniciar sesión</button>
+                <div id="olvido-password">
+                    <span>¿Olvidaste tu contraseña?</span>
+                </div>
+            </form>
+
+        </div>
+
+
+        
+    </div>
+</div>

@@ -1,0 +1,111 @@
+.contenedor{
+    height: 100% !important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'info info form form form';
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+#info{  
+    background-color: #001B24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: info;
+}
+#contenido{
+    width: 302px;
+    text-align: center;
+}
+#contenido > * {
+    margin:0 auto;
+}
+
+.texto-coink{
+    color : #C4F6DC;
+}
+#bienvenido{
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Montserrat", Montserrat, sans-serif;
+    text-align: center;
+}
+#texto-dia{
+    font-size: 24px;
+    font-family: "Avenir LT Std", Avenir, sans-serif;
+    text-align: center;
+}
+#coink1{
+    width: 302px;
+}
+
+#form-cont{
+    background-color: #F2F2F2;
+    grid-area: form;
+    
+}
+
+#registro{
+    margin: 86px 86px 0 0 ;
+    text-align: right;
+}
+
+#texto-pregunta{
+    color: #212121;
+    font-weight: 500;
+    font-family: "Montserrat", Montserrat, sans-serif;
+    font-size: 16px;
+}
+#texto-registro{
+    color: #001B24;
+    font-weight: 600;
+    font-family: "Montserrat", Montserrat, sans-serif;
+    font-size: 16px;
+    margin-left: 15px;
+}
+#formulario{
+    margin-top: 150px;
+    width: 458px;
+    margin-left: 30%;
+
+}
+#texto-iniciar-sesion{
+    color: #001B24;
+    font-family: "Montserrat", Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+.form-items{
+    width: 458px;
+    margin-top: 24px;
+}
+#section-check{
+    text-align: left;
+}
+#checkbox-re{
+    color: #004B40;
+    font-family: "Montserrat", Montserrat, sans-serif;
+    font-weight: 600;
+
+}
+#btn-login{
+    width: 330px;
+    height: 45px;
+    border-radius: 100px;
+    margin-top: 24px;
+}
+#olvido-password{
+    margin-top: 24px;
+    color: #001B24;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Montserrat", Montserrat, sans-serif;
+}

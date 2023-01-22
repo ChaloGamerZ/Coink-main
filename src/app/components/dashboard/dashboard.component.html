@@ -1,0 +1,113 @@
+<mat-toolbar class="toolbar" color="primary">
+    <img class="icono" src = "./assets/coink.png" />
+    <mat-icon>menu</mat-icon>
+    <span class="spacer"></span>
+    <div class="title-center">BACKOFFICE</div>
+    <span class="spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="contenedor">
+    <mat-card class="side1-nav">
+      <mat-card-content>
+        <div class="item">
+          <div class="circle"></div>
+          <div class="user-info">
+            <mat-icon class="icono-center">lock</mat-icon>
+            <span>jeff</span>
+            <hr class="solid">
+            
+          </div>
+        </div>
+      </mat-card-content>
+  
+      <div class="item">
+        <div>
+          <hr class="solid">
+        </div>
+        <ul class="list-group menu">
+          <li id="tarjeta" class="list-group-item menu-item"><div id="tarjeta-c">Tarjetas Visa en dispensadores</div> <mat-icon id="icon-tarjeta">arrow_drop_up</mat-icon></li>
+          <li class="list-group-item menu-item demas"><div class="solo1">Crear dispensador</div></li>
+          <li class="list-group-item menu-item demas">Monitorear y editar dispensadores</li>
+          <li class="list-group-item menu-item demas" id="solicitud"><div class="solo1">Solicitud tarjetas</div></li>
+        </ul>
+      </div>
+    </mat-card>
+    <div class="contenido">
+      
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" id="bg-tarjeta">Tarjetas Visa Dispensadores</li>
+          <li class="breadcrumb-item active" id="bg-solicitud" aria-current="page">Solicitud tarjetas</li>
+        </ol>
+      </nav>
+  
+      <h1 id="titulo-solicitud">SOLICITUD TARJETAS</h1>
+      <div class="buscar-info">
+        <mat-icon class="icono-center">search</mat-icon>
+        <span class="fw-bold">Buscar</span>
+      </div>
+      <mat-form-field color="primary" class="input-datos">
+        <mat-label>Usuario</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ej: Juan" #input>
+      </mat-form-field>
+      <mat-form-field class="input-datos">
+        <mat-label>Tipo</mat-label>
+        <input matInput (keyup)="applyFilter2($event)" placeholder="Ej: Vivo" #input>
+      </mat-form-field>
+      <div>
+        <button class="input-boton" id="btn-limpiar" mat-stroked-button >Limpiar filtros</button>
+        <button class="input-boton" mat-raised-button color="primary">Buscar</button>
+      </div>
+  
+      <div id="p-solicitar">
+        <button class="input-boton" id="btn-solicitar" mat-stroked-button >Solicitar tarjetas</button>
+      </div>
+  
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="species">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  class="toolbar"> Species </th>
+            <td mat-cell *matCellDef="let row"> {{row.species}} </td>
+          </ng-container>
+      
+          <!-- Progress Column -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="toolbar"> Status </th>
+            <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="toolbar"> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+      
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="toolbar"> Location </th>
+            <td mat-cell *matCellDef="let row"> {{row.location.name}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="episode">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="toolbar"> Episode </th>
+            <td mat-cell *matCellDef="let row"> {{row.episode[0]}} </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="toolbar"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+  
+    </div>
+  </div>
